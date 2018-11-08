@@ -1,5 +1,29 @@
 // *** begin reviews *** //
 .reviews
+   padding: 100px 0
+   &__title
+      margin-bottom: 50px
+      
+   &__slider
+      max-width: 730px
+      margin: 0 auto 50px
+      .slick-list
+         margin: 0 -15px
+      &-wrap
+         position: relative
+         &::after
+            position: absolute
+            top: calc(50% - 2px)
+            left: 150px
+            right: 150px
+            z-index: -1
+            height: 2px
+            background-color: #e4e4e4
+            content: ''
+   &__block
+      padding: 0 15px
+      +ratio(730, 425)
+      
    &__row
       margin: 0 -15px 50px
    &__item

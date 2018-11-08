@@ -1,12 +1,13 @@
 import '@fancyapps/fancybox';
 import objectFitImages from 'object-fit-images';
+import objectFitVideos from 'object-fit-videos';
 import { $body, detectIE, $scrolledElements } from './_helpers';
 
 import './components/Header';
+import './components/VideoBlock';
 // import './components/Popups';
 // import './components/Form';
-// import './components/Sliders';
-// import './components/CTabs';
+import './components/Sliders';
 import './components/ExpandBlock';
 
 export class Common {
@@ -16,6 +17,7 @@ export class Common {
 
   init() {
     objectFitImages();
+    objectFitVideos();
     this.fancyboxSettings();
     this.addClassIE();
     this.scrollBtn();

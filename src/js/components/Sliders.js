@@ -20,8 +20,7 @@ class Slider {
     this.onInit = opts.onInit || false;
     this.adaptiveHeight = opts.adaptiveHeight || false;
 
-    const iconLeft = svgIcon('angle-left');
-    const iconRight = svgIcon('angle-right');
+    const arrow = svgIcon('arr-down');
 
     this.defaultOptions = {
       slidesToShow: this.slidesToShow,
@@ -33,8 +32,8 @@ class Slider {
       accessibility: false,
       swipe: true,
       arrows: this.arrows,
-      prevArrow: `<button type="button" class="slider-btn slider-btn_prev">${iconLeft}</button>`,
-      nextArrow: `<button type="button" class="slider-btn slider-btn_next">${iconRight}</button>`,
+      prevArrow: `<button type="button" class="slider-btn slider-btn_prev">${arrow}</button>`,
+      nextArrow: `<button type="button" class="slider-btn slider-btn_next">${arrow}</button>`,
       dots: this.dots,
       dotsClass: this.dotsClass,
       appendArrows: this.appendArrows,
@@ -58,20 +57,18 @@ class Slider {
 
 export default new Slider();
 
-const screenSld = new Slider({
-  el: '.info-block__slider',
-  ease: 'cubic-bezier(0.74, 0.1, 0.32, 0.98)',
-  speed: 1100,
-  dotsClass: 'screen__slider-dots slider-dots slider-dots_gray',
-  appendArrows: '.screen__slider-controls',
-  appendDots: '.screen__slider-controls',
+const reviewsSld = new Slider({
+  el: '.js-reviews-slider',
+  appendArrows: '.reviews__slider-wrap',
+  speed: 600,
   infinite: true,
-  responsive: [
-    {
-      breakpoint: 767,
-      settings: {
-        speed: 800
-      }
-    }
-  ]
+  arrows: true
+});
+
+reviewsSld.$slider.on('beforeChange', function() {
+  const videoBlock = this.querySelector('.slick-current.video-block');
+  const video = videoBlock.querySelector('video');
+
+  video.pause();
+  videoBlock.classList.remove('is-active');
 });

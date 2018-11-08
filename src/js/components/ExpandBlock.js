@@ -24,7 +24,7 @@ class ExpandBlock {
   showMore() {
     const currentHeight = this.block.offsetHeight;
     const itemsInRow = Resp.isDesk ? 4 : Resp.isTablet ? 3 : 2;
-    const hiddenItems = [...this.block.children].filter((x) => x.classList.contains(css.hidden));
+    const hiddenItems = [...this.block.children].filter((i, x) => x.classList.contains(css.hidden));
     let hiddenItemsHeight = 0;
 
     for (const item of hiddenItems) hiddenItemsHeight += this.getHiddenElHeight(item);

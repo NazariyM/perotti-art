@@ -190,6 +190,20 @@ block content
 			+e.container.container
 				+sectTitle('отзывы студентов курса', '_yellow team__title')
 
+				+e.slider-wrap
+					+e.slider.slider.js-reviews-slider
+						-i = 0
+						while i < 2
+							+e.block.video-block
+								img.video-block__poster(src='img/content/reviews/reviews-poster.png' alt='image')
+								+b.BUTTON.video-block__play-btn
+									+i('play')
+									+i('play')
+
+								video(playsinline='playsinline', controls, loop='loop', preload='auto')
+									source(src='data/video/video-sample.mp4', type='video/mp4')
+							-i++
+
 				+e.row.row
 					+e.item.col._md
 						+e.item-img-wrap.img-wrap
