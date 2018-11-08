@@ -1,0 +1,31 @@
+//begin header
++b.HEADER.header(class= headerClass)
+	+e.container.container
+		+e.A.logo(href='#!')
+			+e.IMG.logo-img(src='img/other/logo.png' alt='Международная школа искусств Перотти')
+			+e.SPAN.logo-text Международная школа искусств Перотти
+
+		+e.actions
+
+			+b.NAV.nav
+				+e.BUTTON.btn(type='button')
+					+e.SPAN.btn-burger
+						+e.SPAN.btn-lines
+					+e.SPAN.btn-text МЕНЮ
+
+				-
+					navList = [
+					['Программа', 'program', 'lock'],
+					['Вы пробуете', 'kinds', 'data-quality'],
+					['Галерея', 'gallery', 'gallery'],
+					['Отзывы', 'reviews', 'quotes']]
+				+e.UL.list
+					for navLink in navList
+						+e.LI.list-item
+							+e.A.list-link(href=`#${navLink[1]}`)
+								+e.list-icon-wrap
+									+e.list-icon(class= `icon-${navLink[2]}`)
+								+e.list-text= navLink[0]
+
+			+btn('_yellow header__call-btn', 'Заказать звонок', 'call-popup')
+//end header

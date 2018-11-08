@@ -1,0 +1,211 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Международная школа искусств Перотти'
+
+block content
+
+	//begin main
+	main.main
+
+		//begin screen
+		+b.SECTION.screen
+			+e.container.container
+				+b.request-block.screen__request-block
+					+e.heading
+						+e.H5.title.title Открыть талант
+							= ' '
+							span и развить
+							= ' '
+							| воображение
+					+e.FORM.form(action='#!' method='POST')
+						+e.P.form-descr Запишись на обучение и стань экспертом в современном искусстве вместе с опытными художниками.
+						+e.form-block
+							+formField('request-block__form-field', 'Имя')(name='name')
+							+formField('request-block__form-field js-tel-input', 'Телефон')(type='tel' name='tel' required)
+							+btn('_blue request-block__form-btn', 'Отправить')(type='submit')
+
+			+e.decor._1.decor-img(style='background-image: url(img/decor/screen_decor-1.png)')
+			+e.decor._2.decor-img(style='background-image: url(img/decor/screen_decor-2.png)')
+			+e.decor._3.decor-img(style='background-image: url(img/decor/screen_decor-3.png)')
+			+e.BUTTON.scroll-btn.js-scroll-to
+				+i('arr-down')
+		//end screen
+
+		//begin programs
+		+b.SECTION.programs.js-scroll-dest
+			+e.container.container
+				+sectTitle('Программы', '_white programs__title')
+
+				-
+					programsList = [{
+					title: 'Мастерская современной живописи для взрослых',
+					descr: 'Вы узнаете, чем дышит современное искусство, познакомитесь с актуальными мировыми трендами, освоите эффектные приемы и возможности художественных материалов, выйдете за рамки привычного и откроете новые формы выражения.'
+					}, {
+					title: 'Арт-эксперт для подростков',
+					subTitle: 'с блоком арт-английского',
+					descr: 'Программа для творческого самовыражения, освобождения от шаблонов и интенсивной прокачки современного разговорного английского языка! 18 занятий = 14 крутых живописных работ в различных современных техниках! '
+					}, {
+					title: 'Арт-эксперт для детей',
+					subTitle: 'авторский курс для детей 7-10 лет',
+					list: ['Знакомство с теорией цвета через творчество легендарных Пита Мондриана и Марка Ротко', 'Создание авторского слоника Элмера в стиле Василия Кандинского', 'Основы композиции на работах Анри Матисса']
+					}]
+				mixin programsItem(item, idx)
+					+e.item
+						+e.item-img-wrap.img-wrap
+							+e.IMG(src=`img/content/programs/programs_${idx + 1}.jpg` alt='image')
+						+e.item-text
+							+e.H4.item-title= item.title
+							if item.subTitle
+								+e.H6.item-sub-title= item.subTitle
+							+e.item-text-decor
+							if item.descr
+								+e.P.item-descr= item.descr
+							if item.list
+								+e.UL.item-list
+									for text in item.list
+										li= text
+
+							+e.A.item-link.striped-link._blue(data-popup-target=`programs-popup-${idx + 1}` href='#!') Узнать подробнее
+				each item, idx in programsList
+					+programsItem(item, idx)
+		//end programs
+			
+		//begin kinds
+		+b.SECTION.kinds
+			+e.container.container
+				+sectTitle('Вы попробуете', '_yellow kinds__title')
+
+				-
+					kindsList = [
+					'Поп-арт',
+					'Стрит-арт',
+					'Абстракция',
+					'Флюид арт',
+					'Сюрреализм',
+					'Мастихин',
+					'Аниме',
+					'Кубизм',
+					'Символизм',
+					'Коллаж',
+					'Микст медиа',
+					'Минимализм'
+					]
+
+				+e.row.row
+					for text, i in kindsList
+						+e.block.col._md
+							+e.H5.block-title.title-sm= text
+							+e.block-img-wrap.img-wrap
+								+e.IMG(src=`img/content/kinds/kinds_${i + 1}.jpg` alt='image')
+
+					+e.divider._1
+					+e.divider._2
+					+e.divider._3
+		//end kinds
+
+		+b.section-divider._1
+		
+		//begin view
+		+b.SECTION.view
+			+e.container.container.js-expand-container
+				+e.row.row.js-expand-block
+					-i = 0
+					while i < 16
+						+e.block.col._sm(class= `${i >= 8 ? 'is-hidden' : ''}`)
+							+e.block-img-wrap.img-wrap.view-block
+								a.view-block__link(href='img/content/view/view_lg.jpg' data-fancybox='view-gallery')
+									.view-block__icon.icon-loupe
+								+e.IMG(src=`img/content/view/view_${i >= 8 ? i - 7 : i + 1}.jpg` alt='image')
+						-i++
+
+					+e.divider._1
+					+e.divider._2
+					+e.divider._3
+					//+e.divider._4
+					//<div class="view__divider view__divider_4"></div>
+
+				+e.more
+					+e.A.more-link.striped-link._blue.js-expand-btn(href='#!') Показать еще
+		//end view
+			
+		//begin team
+		+b.SECTION.team
+			+e.container.container
+				+sectTitle('Наши преподаватели', '_yellow team__title')
+
+				+e.person
+					+e.person-data
+						+e.person-img-wrap.img-wrap
+							+e.IMG(src='img/content/team/team_1.jpg' alt='image')
+						+e.H5.person-name.title-sm Алена Кашина
+					+e.person-text
+						+e.P.person-descr
+							span Алена Кашина
+							= ' '
+							| – молодой, креативный преподаватель с российским и международным художественным образованием и опытом работы. Окончила Британскую Высшую Школу Дизайна и American River Аrt Сollege (Калифорния). Прекрасно владеет современными техниками живописи и рисунка, иллюстрацией.
+						+e.person-photos
+							+e.person-photos-item.img-wrap.view-block
+								a.view-block__link(href='img/content/view/view_lg.jpg' data-fancybox='team-gallery-1')
+									.view-block__icon.icon-loupe_sm
+								+e.IMG(src=`img/content/team/team_sm-1.jpg` alt='image')
+							+e.person-photos-item.img-wrap.view-block
+								a.view-block__link(href='img/content/view/view_lg.jpg' data-fancybox='team-gallery-1')
+									.view-block__icon.icon-loupe_sm
+								+e.IMG(src=`img/content/team/team_sm-2.jpg` alt='image')
+							+e.person-photos-item.img-wrap.view-block
+								a.view-block__link(href='img/content/view/view_lg.jpg' data-fancybox='team-gallery-1')
+									.view-block__icon.icon-loupe_sm
+								+e.IMG(src=`img/content/team/team_sm-3.jpg` alt='image')
+
+				+e.person
+					+e.person-data
+						+e.person-img-wrap.img-wrap
+							+e.IMG(src='img/content/team/team_2.jpg' alt='image')
+						+e.H5.person-name.title-sm Алена Кашина
+					+e.person-text
+						+e.P.person-descr
+							span Анна Селина
+							= ' '
+							| – художник, окончила МГАХИ им. Сурикова, Мастерскую станковой живописи под руководством действительного члена РАХ, талантливого художника Салаховой Айдан Таировны, МАХУ памяти 1905 года. Училась в Свободных мастерских Московского музея современного искусства. Сотрудничает с различными галереями и реализует проекты в области современного искусства.
+						+e.person-photos
+							+e.person-photos-item.img-wrap.view-block
+								a.view-block__link(href='img/content/view/view_lg.jpg' data-fancybox='team-gallery-2')
+									.view-block__icon.icon-loupe_sm
+								+e.IMG(src=`img/content/team/team_sm-4.jpg` alt='image')
+							+e.person-photos-item.img-wrap.view-block
+								a.view-block__link(href='img/content/view/view_lg.jpg' data-fancybox='team-gallery-2')
+									.view-block__icon.icon-loupe_sm
+								+e.IMG(src=`img/content/team/team_sm-5.jpg` alt='image')
+							+e.person-photos-item.img-wrap.view-block
+								a.view-block__link(href='img/content/view/view_lg.jpg' data-fancybox='team-gallery-2')
+									.view-block__icon.icon-loupe_sm
+								+e.IMG(src=`img/content/team/team_sm-6.jpg` alt='image')
+		//end team
+
+		+b.section-divider._2
+
+		//begin reviews
+		+b.SECTION.reviews
+			+e.container.container
+				+sectTitle('отзывы студентов курса', '_yellow team__title')
+
+				+e.row.row
+					+e.item.col._md
+						+e.item-img-wrap.img-wrap
+							+e.IMG(src='img/content/reviews/reviews_1.jpg' alt='image')
+						+e.P.item-descr Развить вкус и воображение, открыть талант
+					+e.item.col._md
+						+e.item-img-wrap.img-wrap
+							+e.IMG(src='img/content/reviews/reviews_2.jpg' alt='image')
+						+e.P.item-descr Писать картины как Пикассо, Дали, Уорхол
+					+e.item.col._md
+						+e.item-img-wrap.img-wrap
+							+e.IMG(src='img/content/reviews/reviews_3.jpg' alt='image')
+						+e.P.item-descr Читать в картинах и скульптуре зашифрованные послания
+
+				+e.actions
+					+btn('_blue reviews__actions-btn', 'Отправить заявку', 'call-popup')
+		//end reviews
+
+	//end main

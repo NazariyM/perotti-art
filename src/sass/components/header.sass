@@ -1,0 +1,28 @@
+.header
+   $parent: &
+   position: absolute
+   top: 0
+   left: 0
+   width: 100%
+   z-index: 10
+   padding: 24px 0
+   &__container
+      display: flex
+      align-items: center
+      justify-content: space-between
+   &__logo
+      display: flex
+      align-items: center
+      flex: 0 0 445px
+      &-img
+         margin-right: 32px
+      &-text
+         +f('int', 18, 24)
+         text-transform: uppercase
+         color: #000
+   &__actions
+      display: flex
+      align-items: center
+   &__call-btn
+      margin-left: 40px
+      min-width: 275px

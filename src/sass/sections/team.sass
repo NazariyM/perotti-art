@@ -1,0 +1,44 @@
+// *** begin team *** //
+.team
+   padding: 70px 0
+   &__title
+      margin-bottom: 60px
+   &__person
+      display: flex
+      &:not(:last-child)
+         margin-bottom: 60px
+      &-data
+         flex-basis: 255px
+         flex-shrink: 0
+      &-img-wrap
+         +ratio(255, 255)
+      &-name
+         position: relative
+         padding: 20px 10px
+         &::after
+            +coverdiv
+            z-index: -1
+            transform: rotate(180deg)
+            background: url("../img/bg/gray-top.png") 50% 0
+            content: ''
+      &-text
+         flex: 1 1 auto
+         padding-left: 30px
+      &-descr
+         padding-bottom: 15px
+         border-bottom: 2px solid $color9
+         span
+            +f('pn800')
+      &-photos
+         padding-top: 22px
+         display: flex
+         justify-content: flex-start
+         flex-wrap: wrap
+         &-item
+            flex-basis: 94px
+            height: 94px
+            margin-top: 15px
+            +cover-img
+            &:not(:last-child)
+               margin-right: 15px
+// end team //

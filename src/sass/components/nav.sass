@@ -1,0 +1,142 @@
+.nav
+   $parent: &
+   position: relative
+   &__list
+      position: absolute
+      top: calc(100% + 30px)
+      left: calc(50% - 169px)
+      z-index: 10
+      display: flex
+      flex-wrap: wrap
+      width: 338px
+      opacity: 0
+      transform: scaleY(0)
+      pointer-events: none
+      background-color: $white
+      transition: opacity .2s ease-in-out, transform .4s ease-in-out
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
+      transform-origin: 0 0
+      .is-active &
+         opacity: 1
+         transform: scaleY(1)
+         pointer-events: auto
+      &::before
+         position: absolute
+         left: calc(50% - 10px)
+         bottom: calc(100% - 10px)
+         content: ''
+      &::before
+         width: 20px
+         height: 20px
+         z-index: -22
+         transform: rotate(45deg)
+         background-color: $white
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
+         
+      &-item
+         flex: 0 0 50%
+         background-color: $white
+         &:nth-child(1)
+            padding: 8px 2px 2px 8px
+         &:nth-child(2)
+            padding: 8px 8px 2px 2px
+         &:nth-child(3)
+            padding: 2px 2px 8px 8px
+         &:nth-child(4)
+            padding: 2px 8px 8px 2px
+      &-link
+         display: flex
+         align-items: center
+         flex-direction: column
+         justify-content: center
+         height: 100px
+         background-color: $color10
+         transition: .3s ease-in-out
+         text-align: center
+         &:hover
+            background-color: $color1
+      &-icon
+         display: block
+         margin: 0 auto 15px
+         &-wrap
+            display: block
+            height: 35px
+      &-text
+         +f('pn700', 14, 36)
+         color: $black
+         text-transform: uppercase
+         
+   &__btn
+      $parent: &
+      display: flex
+      align-items: center
+      outline: 0
+      padding: 0
+      z-index: 1
+      &-burger
+         display: block
+         width: 28px
+         height: 20px
+         margin-right: 9px
+         cursor: pointer
+         
+      &-lines
+         position: relative
+         display: block
+         width: 28px
+         height: 4px
+         transform: translateY(8px)
+         background-color: $black
+         transition: .3s ease-in-out
+         &:after, &:before
+            width: 28px
+            height: 4px
+         #{$parent}.is-active &
+            background: transparent
+            
+         &:before
+            content: ''
+            position: absolute
+            left: 0
+            bottom: 8px
+            background-color: $black
+            transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+         &:after
+            content: ''
+            position: absolute
+            left: 0
+            top: 8px
+            background-color: $black
+            transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+         #{$parent}.is-active &
+            &:after
+               top: 0
+               transform: rotate(45deg)
+               transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+            &:before
+               bottom: 0
+               transform: rotate(-45deg)
+               transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+               
+      &-text
+         position: relative
+         padding: 1px 6px
+         +f('pn800', 18, 18)
+         text-transform: uppercase
+         color: #010101
+         overflow: hidden
+         &::after
+            position: absolute
+            z-index: -1
+            top: 0
+            left: 0
+            height: 100%
+            width: 100%
+            transform: scaleY(0)
+            transform-origin: 0 0
+            background-color: $color1
+            transition: .3s ease-in-out
+            content: ''
+            .is-active &
+               transform: scaleY(1)
+         

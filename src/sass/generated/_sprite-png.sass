@@ -1,0 +1,102 @@
+$icons: (0:0)
+$icons: map-merge($icons,('clip': (X: 0px, Y:0px, W: 82px, H: 97px, TW: 274px, TH: 193px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('data-quality': (X: -246px, Y:-46px, W: 28px, H: 28px, TW: 274px, TH: 193px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('gallery': (X: -92px, Y:-107px, W: 36px, H: 31px, TW: 274px, TH: 193px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('lock': (X: -246px, Y:0px, W: 28px, H: 36px, TW: 274px, TH: 193px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('loupe': (X: -92px, Y:0px, W: 64px, H: 65px, TW: 274px, TH: 193px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('loupe_sm': (X: -42px, Y:-107px, W: 40px, H: 41px, TW: 274px, TH: 193px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('quotes': (X: -42px, Y:-158px, W: 31px, H: 32px, TW: 274px, TH: 193px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('sect-title_white-l': (X: -208px, Y:0px, W: 28px, H: 89px, TW: 274px, TH: 193px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('sect-title_white-r': (X: -166px, Y:0px, W: 32px, H: 86px, TW: 274px, TH: 193px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('sect-title_yellow-l': (X: -208px, Y:-99px, W: 28px, H: 89px, TW: 274px, TH: 193px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('sect-title_yellow-r': (X: 0px, Y:-107px, W: 32px, H: 86px, TW: 274px, TH: 193px, IMG: '../img/sprite.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+  $icon: map-get($icons, $icon)
+  @return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  width: icon-attr($iconName, W)
+  height: icon-attr($iconName, H)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  $width: icon-attr($iconName, W)
+  $height: icon-attr($iconName, H)
+  width: $width/2
+  height: $height/2
+  $x: icon-attr($iconName, X)
+  $y: icon-attr($iconName, Y)
+  background-position: $x/2 $y/2
+  $tw: icon-attr($iconName, TW)   
+  $th: icon-attr($iconName, TH)
+  background-size: $tw/2 $th/2    
+
+
+@mixin s($i)
+  +sprite($i)
+@mixin sp($i)
+  +sprite-position($i)
+@mixin sr($i)
+  +sprite-retina($i)
+
+.icon-clip
+   width: 82px
+   height: 97px
+   background-image: url('../img/sprite.png')
+   background-position: 0px 0px
+.icon-data-quality
+   width: 28px
+   height: 28px
+   background-image: url('../img/sprite.png')
+   background-position: -246px -46px
+.icon-gallery
+   width: 36px
+   height: 31px
+   background-image: url('../img/sprite.png')
+   background-position: -92px -107px
+.icon-lock
+   width: 28px
+   height: 36px
+   background-image: url('../img/sprite.png')
+   background-position: -246px 0px
+.icon-loupe
+   width: 64px
+   height: 65px
+   background-image: url('../img/sprite.png')
+   background-position: -92px 0px
+.icon-loupe_sm
+   width: 40px
+   height: 41px
+   background-image: url('../img/sprite.png')
+   background-position: -42px -107px
+.icon-quotes
+   width: 31px
+   height: 32px
+   background-image: url('../img/sprite.png')
+   background-position: -42px -158px
+.icon-sect-title_white-l
+   width: 28px
+   height: 89px
+   background-image: url('../img/sprite.png')
+   background-position: -208px 0px
+.icon-sect-title_white-r
+   width: 32px
+   height: 86px
+   background-image: url('../img/sprite.png')
+   background-position: -166px 0px
+.icon-sect-title_yellow-l
+   width: 28px
+   height: 89px
+   background-image: url('../img/sprite.png')
+   background-position: -208px -99px
+.icon-sect-title_yellow-r
+   width: 32px
+   height: 86px
+   background-image: url('../img/sprite.png')
+   background-position: 0px -107px

@@ -1,0 +1,81 @@
+// *** begin programs *** //
+.programs
+   position: relative
+   z-index: 2
+   padding: 60px 0 100px
+   background-color: $color1
+   &__title
+      margin-bottom: 70px
+   &__item
+      position: relative
+      display: flex
+      align-items: flex-start
+      background-color: $white
+      box-shadow: 0 10px 40px rgba(155, 155, 155, 0.4)
+      &::before, &::after
+         position: absolute
+         left: 0
+         width: 100%
+         content: ''
+      &::before
+         bottom: 100%
+         height: 50px
+         background: url("../img/decor/white_border-top.png") 50% 50% / cover
+      &::after
+         top: 100%
+         height: 42px
+         background: url("../img/decor/white_border-bot.png") 50% 50% / cover
+         
+      &:not(:last-child)
+         margin-bottom: 160px
+      &-img-wrap
+         flex: 0 0 percentage(350 / 1110)
+         width: percentage(350 / 1110)
+         +ratio(350, 350)
+         margin: -25px 0 0 -25px
+         border-radius: 6px
+         overflow: hidden
+         +cover-img
+         box-shadow: 0 10px 20px rgba(155, 155, 155, 0.4)
+         img
+            +coverdiv
+            width: 100%
+      &-text
+         flex: 1 1 auto
+         padding: 20px 30px 20px 35px
+         &-decor
+            margin: 23px 0 24px
+            width: 180px
+            height: 14px
+            background: url("../img/decor/yellow-lines.png") no-repeat
+            
+      &-title
+         +f('pn700', 27, 33)
+         text-transform: uppercase
+         color: $black
+      &-sub-title
+         display: inline-block
+         margin-top: 20px
+         padding: 7px 18px 7px 14px
+         +f('pn700', 20, 27)
+         color: $black
+         background-color: #01e29c
+      &-descr
+         margin-bottom: 25px
+         font-size: 24px
+         line-height: 36px
+      &-list
+         margin-bottom: 25px
+         li
+            &::before
+               display: inline-block
+               vertical-align: 3px
+               margin-right: 10px
+               content: ''
+               width: 8px
+               height: 8px
+               background-color: $color1
+               border-radius: 50%
+      &-link
+      
+// end programs //

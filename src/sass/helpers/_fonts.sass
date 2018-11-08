@@ -1,0 +1,34 @@
+//fonts
+=font($alias, $name)
+   @font-face
+      font-family: $alias
+      src: url("../fonts/" + $name + ".eot")
+      src: url("../fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $name + ".woff") format("woff"), url("../fonts/" + $name + ".woff2") format("woff2"), url("../fonts/" + $name + ".ttf") format("truetype")
+      font-weight: normal
+      font-style: normal
+
++font('Intro', 'Intro')
++font('ProximaNova-Bold', 'ProximaNova-Bold')
++font('ProximaNova-Extrabld', 'ProximaNova-Extrabld')
++font('ProximaNova-Regular', 'ProximaNova-Regular')
+
+=f($name, $font-size: null, $line-height: null, $letter-spacing: null)
+   $font-family: null
+   @if $name == "int"
+      $font-family: "Intro"
+   @if $name == "pn700"
+      $font-family: "ProximaNova-Bold"
+   @if $name == "pn800"
+      $font-family: "ProximaNova-Extrabld"
+   @if $name == "pn400"
+      $font-family: "ProximaNova-Regular"
+      
+   font-family: $font-family, Arial, sans-serif
+   @if $font-family != null
+      font-weight: normal
+   @if $font-size != null
+      font-size: $font-size * 1px
+   @if $line-height != null
+      line-height: $line-height * 1px
+   @if $letter-spacing != null
+      letter-spacing: ($letter-spacing / 1000) * 1em

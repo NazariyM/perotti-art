@@ -1,0 +1,53 @@
+// *** begin view *** //
+.view
+   padding: 100px 0
+   background: $color9 url("../img/bg/gray_dots.png") no-repeat 50% top
+   &__row
+      position: relative
+   &__block
+      &-img-wrap
+         +ratio(255, 255)
+   &__more
+      height: 65px
+      display: flex
+      justify-content: center
+      align-items: flex-end
+      &-link
+      
+   &__divider
+      position: absolute
+      left: 0
+      width: 100%
+      height: 143px
+      pointer-events: none
+      transition: 1.5s ease-in-out
+      &_1
+         top: 196px
+      &_2
+         top: 480px
+         opacity: 0
+         .is-active &
+            opacity: 1
+      &_3
+         top: 762px
+         opacity: 0
+         .is-active &
+            opacity: 1
+      &_4
+         top: 1050px
+         opacity: 0
+         .is-active &
+            opacity: 1
+            
+      &::before, &::after
+         position: absolute
+         content: ''
+         width: 143px
+         height: 143px
+         background: url("../img/decor/cross-divider.png")
+         +cover
+      &::before
+         left: calc(25% - 73px)
+      &::after
+         left: calc(75% - 73px)
+// end view //

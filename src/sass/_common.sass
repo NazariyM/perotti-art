@@ -1,0 +1,88 @@
+body
+   min-width: 320px
+   -webkit-font-smoothing: antialiased
+   -moz-osx-font-smoothing: grayscale
+   +f('pn400', 20, 27)
+   color: $color5
+   &.is-locked
+      position: fixed
+      top: 0
+      left: 0
+      right: 0
+      height: 0
+      overflow: hidden
+
+.container
+   position: relative
+   z-index: 1
+   max-width: 1140px
+   margin: 0 auto
+   padding: 0 15px
+   
+.row
+   display: flex
+   flex-wrap: wrap
+   align-items: flex-start
+   align-content: flex-start
+   margin: 0 percentage(-15 / 1140)
+   
+.col
+   padding: 0 percentage(15 / 1140)
+   &_sm
+      flex-basis: 25%
+      width: 25%
+      &:nth-child(4) ~ &
+         padding-top: percentage(30 / 1140)
+         
+   &_md
+      flex-basis: 33.33333%
+      width: 33.33333%
+      &:nth-child(3) ~ &
+         padding-top: percentage(30 / 1140)
+         
+.main
+   display: block
+   overflow: hidden
+   
+.title-sm
+   text-align: center
+   +f('int', 18, 27)
+   text-transform: uppercase
+   
+.decor-img
+   position: absolute
+   z-index: 1
+   +cover
+
+.img-wrap
+   border-radius: 6px
+   overflow: hidden
+   +cover-img
+   img
+      +coverdiv
+      width: 100%
+
+.view-block
+   $parent: &
+   position: relative
+   &__link
+      +coverdiv
+      z-index: 1
+      opacity: 0
+      +flexCenter
+      background-color: rgba(#01248d, .7)
+      transition: .3s ease-in-out
+      content: ''
+      #{$parent}:hover &
+         opacity: 1
+   &__icon
+      transform: scale(.7)
+      transition: .3s ease-in-out
+      #{$parent}:hover &
+         transform: scale(1)
+   
+.fancybox-infobar
+   display: flex
+   align-items: center
+   +f('int', 14, 12)
+   color: $color1

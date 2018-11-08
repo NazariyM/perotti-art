@@ -1,0 +1,45 @@
+// *** begin section-title *** //
+.section-title
+   $parent: &
+   text-align: center
+   &__text
+      position: relative
+      display: inline-flex
+      align-items: center
+      +f('int', 36, 28)
+      line-height: 1.2
+      color: $black
+      &::before, &::after
+         display: inline-flex
+         content: ''
+         
+      span
+         padding: 20px 22px
+      
+      #{$parent}_white &
+         span
+            background-color: $white
+         &::before
+            +sprite('sect-title_white-l')
+         &::after
+            +sprite('sect-title_white-r')
+
+      #{$parent}_yellow &
+         span
+            background-color: $color1
+         &::before
+            +sprite('sect-title_yellow-l')
+         &::after
+            +sprite('sect-title_yellow-r')
+// end section-title //
+
+// *** begin section-divider *** //
+.section-divider
+   +ratio(1920, 296)
+   +cover
+   max-height: 350px
+   &_1
+      background-image: url("../img/bg/divider_1.png")
+   &_2
+      background-image: url("../img/bg/divider_2.png")
+// end section-divider //

@@ -1,0 +1,42 @@
+// *** begin kinds *** //
+.kinds
+   padding: 100px 0
+   &__title
+      margin-bottom: 60px
+   &__row
+      position: relative
+   &__block
+      
+      &-title
+         padding: 30px 20px
+         margin-bottom: -10px
+         background: url("../img/bg/gray-top.png") 50% 0
+         +cover
+      &-img-wrap
+         +ratio(350, 252)
+         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15)
+         
+   &__divider
+      position: absolute
+      left: 0
+      width: 100%
+      height: 143px
+      pointer-events: none
+      &_1
+         top: calc(25% - 80px)
+      &_2
+         top: calc(50% - 80px)
+      &_3
+         top: calc(75% - 80px)
+      &::before, &::after
+         position: absolute
+         content: ''
+         width: 143px
+         height: 143px
+         background: url("../img/decor/cross-divider.png")
+         +cover
+      &::before
+         left: calc(33.33333% - 73px)
+      &::after
+         left: calc(66.66666% - 73px)
+// end kinds //
