@@ -15,12 +15,8 @@
    transform: translate3d(0, 0, 0)
    transition: .3s ease-in-out
    will-change: opacity, transform
+   background: rgba($black, .7)
    $parent: &
-   &::before
-      +coverdiv
-      opacity: .9
-      background: #17171a url(../img/decor/noise_black.png)
-      content: ''
    &:after
       content: ''
       display: inline-block
@@ -34,26 +30,35 @@
       visibility: visible
    &__close
       position: absolute
-      top: -5px
-      right: -28px
+      top: 15px
+      right: 30px
       z-index: 10
       cursor: pointer
       padding: 0
       display: flex
       align-items: center
       justify-content: center
-      width: 20px
-      height: 20px
       border: 0
-      +xs
-         top: -30px
-         right: 15px
-      &:hover svg
-         fill: $color1
+      width: 26px
+      height: 26px
+      border-radius: 6px
+      background-color: #fff
+      transition: .3s ease-in-out
+      &:hover
+         background-color: $color1
       svg
-         fill: #808080
+         fill: $black
          font-size: 14px
-         +trs
+      &_black
+         top: 0
+         background-color: $black
+         +md
+            top: -5px
+         +sm
+            top: 30px
+            right: 15px
+         svg
+            fill: $white
    
    &__container
       display: inline-block
@@ -67,12 +72,15 @@
       transform: translate3d(0, -100px, 0)
       will-change: transform, opacity
       text-align: left
-      border-radius: 5px
-      +mob-fix
       &_xs
-         max-width: 420px
+         max-width: 412px
+      &_md
+         max-width: 550px
       &_lg
-         max-width: 706px
+         max-width: 1110px
+         +sm
+            padding: 45px 0 0
+            margin: 0
          
 body.popup-opened
    overflow: hidden
@@ -84,15 +92,20 @@ body.popup-opened
   
 // *** begin thanks-popup *** //
 .thanks-popup
+   display: flex
+   height: 492px
    text-align: center
+   background: $black url("../img/decor/thanks_bg.png") no-repeat center bottom 25px / contain
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
+   +r(424)
+      height: 440px
+   +r(374)
+      height: 370px
+   &__title
+      max-width: 300px
+      margin: auto auto 25px
+   
    &__btn
       display: none
-   p
-      color: $color2
-      font-size: 18px
-      line-height: 24px
-      text-align: center
-      +xs
-         font-size: 16px
       
 // end thanks-popup //

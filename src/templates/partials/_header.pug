@@ -1,7 +1,7 @@
 //begin header
 +b.HEADER.header(class= headerClass)
 	+e.container.container
-		+e.A.logo(href='#!')
+		+e.A.logo(href='/home.html')
 			+e.IMG.logo-img(src='img/other/logo.png' alt='Международная школа искусств Перотти')
 			+e.SPAN.logo-text Международная школа искусств Перотти
 
@@ -15,9 +15,9 @@
 
 				-
 					navList = [
-					['Программа', 'program', 'lock'],
+					['Программа', 'programs', 'lock'],
 					['Вы пробуете', 'kinds', 'data-quality'],
-					['Галерея', 'gallery', 'gallery'],
+					['Галерея', 'view', 'gallery'],
 					['Отзывы', 'reviews', 'quotes']]
 				+e.UL.list
 					for navLink in navList

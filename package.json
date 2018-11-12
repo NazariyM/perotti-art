@@ -91,13 +91,17 @@
     "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/polyfill": "^7.0.0",
     "@fancyapps/fancybox": "^3.5.2",
+    "@types/jquery": "^3.3.22",
     "babel-polyfill": "^6.26.0",
+    "flipclock": "^0.10.0",
     "gsap": "^2.0.2",
     "inputmask": "^4.0.2",
+    "jquery-countdown": "^2.2.0",
     "object-fit-images": "^3.2.4",
     "object-fit-videos": "^1.0.4",
     "slick-carousel": "^1.8.1",
     "svgxuse": "^1.2.6",
+    "underscore": "^1.9.1",
     "vintage-popup": "^0.1.10"
   }
 }

@@ -1,1 +1,48 @@
 .footer
+   position: relative
+   z-index: 1
+   padding: 30px 0
+   background-color: $black
+   +rmin(2000)
+      padding: 30px 0 70px
+   &::before
+      position: absolute
+      top: -67%
+      left: 0
+      width: 100%
+      padding-top: percentage(239 / 1920)
+      background-image: url("../img/decor/page-form-paint.png")
+      +cover
+      pointer-events: none
+      content: ''
+      +lg
+         top: -48%
+      +md
+         top: -30%
+      +sm
+         top: -15%
+   
+   &__container
+      display: flex
+      justify-content: space-between
+      +xs
+         flex-direction: column
+         align-items: center
+   &__col
+      display: flex
+      align-items: center
+   &__logo
+      margin-right: 20px
+      +sm
+         margin: 0 0 20px
+      &-img
+         width: 106px
+         height: 106px
+         +xs
+            width: 70px
+            height: 70px
+   &__copyright
+      color: #b5b5b5
+      text-transform: uppercase
+      font-size: 14px
+      line-height: 36px

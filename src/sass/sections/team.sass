@@ -1,12 +1,65 @@
 // *** begin team *** //
 .team
-   padding: 70px 0
+   position: relative
+   padding: 120px 0 110px
+   +md
+      padding: 120px 0 70px
+   +sm
+      padding: 80px 0 40px
+   &__container
+      +lg
+         max-width: 1040px
+   &__decor
+      pointer-events: none
+      z-index: -1
+      +sm
+         display: none
+      &_1
+         top: 15%
+         left: 8%
+         width: percentage(98 / 1920)
+         padding-top: percentage(103 / 1920)
+      &_2
+         top: 48.6%
+         left: -0.4%
+         width: percentage(300 / 1920)
+         padding-top: percentage(324 / 1920)
+         +lg
+            left: -3.4%
+         
+      &_3
+         top: 31.3%
+         right: 2.3%
+         width: percentage(318 / 1920)
+         padding-top: percentage(199 / 1920)
+         +lg
+            top: 43.3%
+            right: 0.3%
+         +md
+            display: none
+      &_4
+         top: 85%
+         right: 3.5%
+         width: percentage(97 / 1920)
+         padding-top: percentage(77 / 1920)
+      
+   
    &__title
-      margin-bottom: 60px
+      margin-bottom: 65px
+      +sm
+         margin-bottom: 35px
+      .section-title__text
+         &::before, &::after
+            +r(424)
+               transform: scale(1)
    &__person
       display: flex
+      +sm
+         flex-direction: column
       &:not(:last-child)
-         margin-bottom: 60px
+         margin-bottom: 65px
+         +sm
+            margin-bottom: 45px
       &-data
          flex-basis: 255px
          flex-shrink: 0
@@ -14,7 +67,7 @@
          +ratio(255, 255)
       &-name
          position: relative
-         padding: 20px 10px
+         padding: 17px 15px 13px
          &::after
             +coverdiv
             z-index: -1
@@ -23,14 +76,16 @@
             content: ''
       &-text
          flex: 1 1 auto
-         padding-left: 30px
+         padding: 15px 0 0 30px
+         +sm
+            padding: 15px 0 0
       &-descr
-         padding-bottom: 15px
+         padding-bottom: 13px
          border-bottom: 2px solid $color9
          span
             +f('pn800')
       &-photos
-         padding-top: 22px
+         padding-top: 8px
          display: flex
          justify-content: flex-start
          flex-wrap: wrap
@@ -39,6 +94,12 @@
             height: 94px
             margin-top: 15px
             +cover-img
+            +sm
+               flex-basis: 70px
+               height: 70px
+               margin-top: 5px
             &:not(:last-child)
                margin-right: 15px
+               +sm
+                  margin-right: 5px
 // end team //

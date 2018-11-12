@@ -1,36 +1,161 @@
 // *** begin reviews *** //
 .reviews
-   padding: 100px 0
+   position: relative
+   padding: 100px 0 120px
+   +md
+      padding: 20px 0 60px
+   &__decor
+      +md
+         display: none
+   
+      &_1
+         z-index: 2
+         top: 28.7%
+         left: 3.5%
+         width: percentage(249 / 1920)
+         padding-top: percentage(234 / 1920)
+      &_2
+         top: 61.5%
+         left: 2.3%
+         width: percentage(225 / 1920)
+         padding-top: percentage(98 / 1920)
+         +lg
+            top: 49.5%
+      &_3
+         top: 28.2%
+         right: 7%
+         width: percentage(120 / 1920)
+         padding-top: percentage(127 / 1920)
+         +lg
+            top: 38.2%
+            right: 3%
+      &_4
+         top: 78%
+         right: 4.5%
+         width: percentage(156 / 1920)
+         padding-top: percentage(194 / 1920)
+         +lg
+            top: 85%
+   
+      &_cross-1
+         top: 9.8%
+         left: 6.2%
+         width: 119px
+         height: 113px
+         fill: $color7
+      &_cross-2
+         top: 38.8%
+         left: 9%
+         width: 159px
+         height: 151px
+         fill: $color7
+      &_cross-3
+         top: 72.6%
+         left: 8.7%
+         width: 140px
+         height: 133px
+         fill: $color7
+      &_cross-4
+         top: 9.9%
+         right: 10%
+         width: 159px
+         height: 151px
+         fill: $color7
+      &_cross-5
+         top: 66.6%
+         right: 2.8%
+         width: 123px
+         height: 117px
+         fill: $color7
+      &_cross-6
+         top: 91.1%
+         right: 5.6%
+         width: 123px
+         height: 124px
+         fill: $color7
+         -webkit-clip-path: inset(0 90% 0 0)
+         clip-path: inset(0 90% 0 0)
+   
    &__title
-      margin-bottom: 50px
-      
+      margin-bottom: 27px
+      +sm
+         margin-bottom: 5px
+   
    &__slider
       max-width: 730px
       margin: 0 auto 50px
+      +md
+         max-width: 600px
       .slick-list
-         margin: 0 -15px
+         padding: 40px 0
       &-wrap
          position: relative
+         margin-bottom: 100px
+         +sm
+            margin-bottom: 20px
+            padding-bottom: 15px
          &::after
             position: absolute
             top: calc(50% - 2px)
-            left: 150px
-            right: 150px
+            left: 95px
+            right: 95px
             z-index: -1
             height: 2px
             background-color: #e4e4e4
             content: ''
+         .slider-btn
+            +sm
+               top: auto
+               bottom: 10px
+               transform: scale(.7)
+            
+      &-item
+         position: relative
+         &::before, &::after
+            position: absolute
+            z-index: 1
+            left: 0
+            width: 100%
+            height: 40px
+            background: url("../img/decor/yellow-border-top.png")
+            content: ''
+         &::before
+            bottom: calc(100% - 12px)
+         &::after
+            top: calc(100% - 1px)
+            transform: rotate(180deg)
+            
    &__block
-      padding: 0 15px
       +ratio(730, 425)
-      
    &__row
-      margin: 0 -15px 50px
+      margin: 0 -15px 60px
+      +sm
+         margin: 0 -15px 35px
    &__item
+      position: relative
+      +sm
+         flex: 0 1 auto
+         width: 100%
+         padding: 0 15px
+      &:nth-child(1) ~ &
+         +sm
+            margin-top: 15px
+      &:not(:last-child)
+         &::after
+            position: absolute
+            top: calc(50% - 92px)
+            right: -5px
+            width: 8px
+            height: 143px
+            background: url("../img/decor/vert-divider.png")
+            content: ''
+            +sm
+               display: none
       &-img-wrap
          margin-bottom: 20px
          box-shadow: 0 10px 20px rgba(155, 155, 155, 0.4)
          +ratio(350, 330)
+         
       &-descr
          max-width: 320px
          +f('pn800', 16, 24)
@@ -39,4 +164,7 @@
       text-align: center
       &-btn
          min-width: 350px
+         +sm
+            min-width: 0
+            width: 100%
 // end reviews //

@@ -1,5 +1,6 @@
 // *** begin request-block *** //
 .request-block
+   $parent: &
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
    background-color: $white
    &__heading
@@ -10,18 +11,43 @@
       background: url("../img/bg/black_bg-sm.png")
       +cover
       text-align: center
+      +sm
+         min-height: 150px
+         padding: 20px 15px
+      #{$parent}_popup &
+         flex-direction: column
+         min-height: 195px
+         padding: 35px 30px 30px
+         +sm
+            padding: 56px 15px 30px
+   
    &__title
-      +f('int', 36)
+      +sm
+         max-width: 260px
+         margin: 0 auto
+         
+   &__sub-title
+      margin-top: 15px
+      +f('int', 18)
       line-height: 1.2
-      color: $color1
-      span
-         color: $white
+      color: $white
    
    &__form
-      padding: 30px 41px 45px 47px
+      padding: 22px 41px 50px 47px
+      +md
+         padding: 20px 25px 35px 25px
+      +sm
+         padding: 15px 15px 25px
+      #{$parent}_popup &
+         padding: 35px 41px 50px 47px
+         +sm
+            padding: 25px 15px 30px 15px
       &-descr
-         margin-bottom: 15px
+         margin-bottom: 27px
          font-size: 18px
+         +sm
+            margin-bottom: 18px
+            font-size: 16px
       &-block
       
       &-field

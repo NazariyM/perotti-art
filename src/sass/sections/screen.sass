@@ -2,9 +2,13 @@
    position: relative
    z-index: 1
    margin-bottom: -1px
-   padding: 200px 0 100px
+   padding: 207px 0 115px
    background-color: $white
    overflow: hidden
+   +lg
+      padding: 155px 0 115px
+   +sm
+      padding: 110px 0 95px
    &::after
       position: absolute
       bottom: -1px
@@ -16,19 +20,34 @@
       pointer-events: none
       content: ''
    &__decor
+      +sm
+         display: none
       &_1
          top: 0
-         left: 32px
+         left: 1.6%
          width: percentage(228 / 1920)
          padding-top: percentage(457 / 1920)
+         +md
+            width: 22%
+            padding-top: 44%
       &_2
-         left: -49px
-         bottom: -150px
+         left: -2.5%
+         bottom: -14.7%
          width: percentage(997 / 1920)
          padding-top: percentage(850 / 1920)
+         +rmin(2000)
+            width: 40.92708%
+            padding-top: 33.27083%
+         +lg
+            bottom: -2.5%
+         +md
+            padding-top: 65%
+            width: 72%
+            left: -27%
+            
       &_3
-         right: -69px
-         bottom: 0
+         right: -3.7%
+         bottom: 1%
          width: percentage(1159 / 1920)
          padding-top: percentage(933 / 1920)
          
@@ -39,6 +58,7 @@
       display: flex
       justify-content: flex-end
       z-index: 5
+      max-width: 1130px
    &__content
       flex: 0 1 percentage(653 / 1140)
    &__img
@@ -48,7 +68,11 @@
       text-align: left
    &__request-block
       max-width: 520px
-      
+      +md
+         max-width: 420px
+      +sm
+         max-width: none
+   
    &__scroll-btn
       position: absolute
       bottom: 12px

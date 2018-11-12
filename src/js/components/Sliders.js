@@ -66,7 +66,7 @@ const reviewsSld = new Slider({
 });
 
 reviewsSld.$slider.on('beforeChange', function() {
-  const videoBlock = this.querySelector('.slick-current.video-block');
+  const videoBlock = this.querySelector('.slick-current').querySelector('.video-block');
   const video = videoBlock.querySelector('video');
 
   video.pause();

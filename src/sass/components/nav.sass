@@ -1,6 +1,8 @@
 .nav
    $parent: &
    position: relative
+   +sm
+      position: static
    &__list
       position: absolute
       top: calc(100% + 30px)
@@ -16,10 +18,16 @@
       transition: opacity .2s ease-in-out, transform .4s ease-in-out
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
       transform-origin: 0 0
+      +sm
+         width: calc(100% - 28px)
+         left: 50%
+         transform: translateX(-50%) scaleY(0)
       .is-active &
          opacity: 1
          transform: scaleY(1)
          pointer-events: auto
+         +sm
+            transform: translateX(-50%) scaleY(1)
       &::before
          position: absolute
          left: calc(50% - 10px)
@@ -79,6 +87,8 @@
          height: 20px
          margin-right: 9px
          cursor: pointer
+         +r(374)
+            display: none
          
       &-lines
          position: relative

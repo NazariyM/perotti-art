@@ -11,6 +11,8 @@
 +font('ProximaNova-Bold', 'ProximaNova-Bold')
 +font('ProximaNova-Extrabld', 'ProximaNova-Extrabld')
 +font('ProximaNova-Regular', 'ProximaNova-Regular')
++font('Arial-BoldMT', 'Arial-BoldMT')
++font('ArialMT', 'ArialMT')
 
 =f($name, $font-size: null, $line-height: null, $letter-spacing: null)
    $font-family: null
@@ -22,6 +24,10 @@
       $font-family: "ProximaNova-Extrabld"
    @if $name == "pn400"
       $font-family: "ProximaNova-Regular"
+   @if $name == "ar700"
+      $font-family: "Arial-BoldMT"
+   @if $name == "ar400"
+      $font-family: "ArialMT"
       
    font-family: $font-family, Arial, sans-serif
    @if $font-family != null

@@ -1,3 +1,19 @@
 //begin footer
 +b.FOOTER.footer
+	+e.container.container
+		+e.col
+			+e.A.logo(href='#!')
+				+e.IMG.logo-img(src='img/other/logo.png' alt='Международная школа искусств Перотти')
+
+			+e.P.copyright © 2018 perotti school
+
+		+b.socials.footer__socials
+			-
+				socList = [
+				'fb',
+				'vk',
+				'inst'
+				]
+			for icon in socList
+				+e.A(href='#!' target='_blank'): +i(`${icon}`)
 //end footer

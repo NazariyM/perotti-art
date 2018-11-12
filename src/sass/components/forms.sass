@@ -6,14 +6,16 @@
       width: 100%
       height: 64px
       padding: 0 30px 0 150px
-      +f('pn400', 16, 30)
+      +f('pn400', 18, 32)
       background-color: $white
       border-radius: 32px
       border: 2px solid $color4
       color: $black
       transition: .3s ease-in-out
-      +xs
-         padding: 0 20px 0 37px
+      +md
+         font-size: 16px
+         line-height: 30px
+         padding: 0 30px 0 110px
          height: 50px
       &:focus
          border-color: $color2
@@ -24,9 +26,11 @@
       left: 0
       bottom: 0
       +flexCenter
-      width: 125px
+      width: 113px
       +f('pn400', 14, 30)
       text-align: center
+      +md
+         width: 95px
       &::after
          position: absolute
          z-index: 1

@@ -5,7 +5,7 @@
    
 .slider-btn
    position: absolute
-   top: calc(50% - 28px)
+   top: calc(50% - 30px)
    +flexCenter
    width: 56px
    height: 56px
@@ -18,13 +18,16 @@
    &_prev
       left: 0
       svg
+         left: -1px
          transform: rotate(90deg)
    &_next
       right: 0
       svg
+         right: -2px
          transform: rotate(-90deg)
          
    svg
+      position: relative
       font-size: 12px
    &.slick-disabled
       pointer-events: none

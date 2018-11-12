@@ -13,16 +13,16 @@ block content
 			+e.container.container
 				+b.request-block.screen__request-block
 					+e.heading
-						+e.H5.title.title Открыть талант
+						+e.H5.title.intro-title Открыть талант
 							= ' '
 							span и развить
 							= ' '
 							| воображение
-					+e.FORM.form(action='#!' method='POST')
+					+e.FORM.form.js-form(action='#!' method='POST')
 						+e.P.form-descr Запишись на обучение и стань экспертом в современном искусстве вместе с опытными художниками.
 						+e.form-block
 							+formField('request-block__form-field', 'Имя')(name='name')
-							+formField('request-block__form-field js-tel-input', 'Телефон')(type='tel' name='tel' required)
+							+formField('request-block__form-field', 'Телефон')(class='js-tel-input' type='tel' name='tel' required)
 							+btn('_blue request-block__form-btn', 'Отправить')(type='submit')
 
 			+e.decor._1.decor-img(style='background-image: url(img/decor/screen_decor-1.png)')
@@ -33,7 +33,35 @@ block content
 		//end screen
 
 		//begin programs
-		+b.SECTION.programs.js-scroll-dest
+		+b.SECTION.programs#programs.js-scroll-dest
+			+e.overlay
+			+e.decor._1.decor-img(style='background-image: url(img/decor/programs-decor_1.png)')
+			+e.decor._2.decor-img(style='background-image: url(img/decor/programs-decor_2.png)')
+			+e.decor._3.decor-img(style='background-image: url(img/decor/programs-decor_3.png)')
+			+e.decor._4.decor-img(style='background-image: url(img/decor/programs-decor_4.png)')
+			+e.decor._5.decor-img(style='background-image: url(img/decor/programs-decor_5.png)')
+			+e.decor._6.decor-img(style='background-image: url(img/decor/programs-decor_6.png)')
+			+e.SVG.decor._cross-1.decor-img(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='207', height='196', viewBox='0 0 207 196')
+					defs
+						path#qgwca(d='M163.687 2035.923h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.249h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.471h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692zm63.122 0h-6.693v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.693zm63.12 0h-6.694v6.66h-4.27v-6.66h-6.694v-4.25h6.694v-6.663h4.27v6.663h6.693zm63.12 0h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692z')
+					g
+						g(transform='translate(-146 -2025)')
+							use(xlink:href='#qgwca')
+
+			+e.SVG.decor._cross-2.decor-img(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='207', height='196', viewBox='0 0 207 196')
+				defs
+					path#qgwca(d='M163.687 2035.923h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.249h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.471h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692zm63.122 0h-6.693v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.693zm63.12 0h-6.694v6.66h-4.27v-6.66h-6.694v-4.25h6.694v-6.663h4.27v6.663h6.693zm63.12 0h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692z')
+				g
+					g(transform='translate(-146 -2025)')
+						use(xlink:href='#qgwca')
+
+			+e.SVG.decor._cross-3.decor-img(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='207', height='196', viewBox='0 0 207 196')
+				defs
+					path#qgwca(d='M163.687 2035.923h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.249h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.471h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692zm63.122 0h-6.693v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.693zm63.12 0h-6.694v6.66h-4.27v-6.66h-6.694v-4.25h6.694v-6.663h4.27v6.663h6.693zm63.12 0h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692z')
+				g
+					g(transform='translate(-146 -2025)')
+						use(xlink:href='#qgwca')
+
 			+e.container.container
 				+sectTitle('Программы', '_white programs__title')
 
@@ -48,10 +76,13 @@ block content
 					}, {
 					title: 'Арт-эксперт для детей',
 					subTitle: 'авторский курс для детей 7-10 лет',
+					listTitle: 'На этом курсе вашего ребенка ждёт:',
 					list: ['Знакомство с теорией цвета через творчество легендарных Пита Мондриана и Марка Ротко', 'Создание авторского слоника Элмера в стиле Василия Кандинского', 'Основы композиции на работах Анри Матисса']
 					}]
 				mixin programsItem(item, idx)
 					+e.item
+						if idx === 0
+							+e.item-decor-icon.icon-clip
 						+e.item-img-wrap.img-wrap
 							+e.IMG(src=`img/content/programs/programs_${idx + 1}.jpg` alt='image')
 						+e.item-text
@@ -62,17 +93,22 @@ block content
 							if item.descr
 								+e.P.item-descr= item.descr
 							if item.list
+								+e.H5.item-list-title= item.listTitle
 								+e.UL.item-list
 									for text in item.list
 										li= text
 
-							+e.A.item-link.striped-link._blue(data-popup-target=`programs-popup-${idx + 1}` href='#!') Узнать подробнее
+							+e.item-more
+								+e.A.item-link.striped-link._blue(data-popup-target=`programs-popup-${idx + 1}` href='#!') Узнать подробнее
 				each item, idx in programsList
 					+programsItem(item, idx)
 		//end programs
 			
 		//begin kinds
-		+b.SECTION.kinds
+		+b.SECTION.kinds#kinds
+			+e.decor._1.decor-img(style='background-image: url(img/decor/kinds-decor_1.png)')
+			+e.decor._2.decor-img(style='background-image: url(img/decor/kinds-decor_2.png)')
+			+e.decor._3.decor-img(style='background-image: url(img/decor/kinds-decor_3.png)')
 			+e.container.container
 				+sectTitle('Вы попробуете', '_yellow kinds__title')
 
@@ -104,10 +140,47 @@ block content
 					+e.divider._3
 		//end kinds
 
-		+b.section-divider._1
+		//+b.section-divider._1
+		
+		//begin start
+		+b.SECTION.start
+			+e.decor._1.decor-img(style='background-image: url(img/decor/start-decor_1.png)')
+			+e.container.container
+				+e.heading
+					+sectTitle('Старт курсов уже в сентябре!', '_simple start__title')
+					+e.H3.sub-title.sub-title
+						span Скидка 15%
+						= ' '
+						| при оплате до 20 сентября
+
+				+e.timer.js-countdown-timer(data-day='29' data-month='11' data-year='2018')
+
+				+btn('_blue start__request-btn', 'Отправить заявку', 'call-popup')
+
+				+e.decor-img.decor-img
+					+e.IMG(src='img/decor/sculpt.png' alt='image')
+
+		//end start
 		
 		//begin view
-		+b.SECTION.view
+		+b.SECTION.view#view
+			+e.decor._1.decor-img(style='background-image: url(img/decor/view-decor_1.png)')
+			+e.decor._2.decor-img(style='background-image: url(img/decor/view-decor_2.png)')
+			+e.SVG.decor._cross-1.decor-img(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='207', height='196', viewBox='0 0 207 196')
+				defs
+					path#qgwca(d='M163.687 2035.923h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.249h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.471h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692zm63.122 0h-6.693v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.693zm63.12 0h-6.694v6.66h-4.27v-6.66h-6.694v-4.25h6.694v-6.663h4.27v6.663h6.693zm63.12 0h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692z')
+				g
+					g(transform='translate(-146 -2025)')
+						use(xlink:href='#qgwca')
+
+			+e.SVG.decor._cross-2.decor-img(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='207', height='196', viewBox='0 0 207 196')
+				defs
+					path#qgwca(d='M163.687 2035.923h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.249h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.471h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692zm63.122 0h-6.693v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.693zm63.12 0h-6.694v6.66h-4.27v-6.66h-6.694v-4.25h6.694v-6.663h4.27v6.663h6.693zm63.12 0h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692z')
+				g
+					g(transform='translate(-146 -2025)')
+						use(xlink:href='#qgwca')
+
+
 			+e.container.container.js-expand-container
 				+e.row.row.js-expand-block
 					-i = 0
@@ -122,7 +195,6 @@ block content
 					+e.divider._1
 					+e.divider._2
 					+e.divider._3
-					//+e.divider._4
 					//<div class="view__divider view__divider_4"></div>
 
 				+e.more
@@ -131,6 +203,11 @@ block content
 			
 		//begin team
 		+b.SECTION.team
+			+e.decor._1.decor-img(style='background-image: url(img/decor/team-decor_1.png)')
+			+e.decor._2.decor-img(style='background-image: url(img/decor/team-decor_2.png)')
+			+e.decor._3.decor-img(style='background-image: url(img/decor/team-decor_3.png)')
+			+e.decor._4.decor-img(style='background-image: url(img/decor/team-decor_4.png)')
+
 			+e.container.container
 				+sectTitle('Наши преподаватели', '_yellow team__title')
 
@@ -162,7 +239,7 @@ block content
 					+e.person-data
 						+e.person-img-wrap.img-wrap
 							+e.IMG(src='img/content/team/team_2.jpg' alt='image')
-						+e.H5.person-name.title-sm Алена Кашина
+						+e.H5.person-name.title-sm Анна Селина
 					+e.person-text
 						+e.P.person-descr
 							span Анна Селина
@@ -183,25 +260,72 @@ block content
 								+e.IMG(src=`img/content/team/team_sm-6.jpg` alt='image')
 		//end team
 
-		+b.section-divider._2
+		//+b.section-divider._2
 
 		//begin reviews
-		+b.SECTION.reviews
+		+b.SECTION.reviews#reviews
+			+e.decor._1.decor-img(style='background-image: url(img/decor/reviews-decor_1.png)')
+			+e.decor._2.decor-img(style='background-image: url(img/decor/reviews-decor_2.png)')
+			+e.decor._3.decor-img(style='background-image: url(img/decor/reviews-decor_3.png)')
+			+e.decor._4.decor-img(style='background-image: url(img/decor/reviews-decor_4.png)')
+			+e.SVG.decor._cross-1.decor-img(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='207', height='196', viewBox='0 0 207 196')
+				defs
+					path#qgwca(d='M163.687 2035.923h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.249h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.471h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692zm63.122 0h-6.693v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.693zm63.12 0h-6.694v6.66h-4.27v-6.66h-6.694v-4.25h6.694v-6.663h4.27v6.663h6.693zm63.12 0h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692z')
+				g
+					g(transform='translate(-146 -2025)')
+						use(xlink:href='#qgwca')
+
+			+e.SVG.decor._cross-2.decor-img(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='207', height='196', viewBox='0 0 207 196')
+				defs
+					path#qgwca(d='M163.687 2035.923h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.249h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.471h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692zm63.122 0h-6.693v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.693zm63.12 0h-6.694v6.66h-4.27v-6.66h-6.694v-4.25h6.694v-6.663h4.27v6.663h6.693zm63.12 0h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692z')
+				g
+					g(transform='translate(-146 -2025)')
+						use(xlink:href='#qgwca')
+
+			+e.SVG.decor._cross-3.decor-img(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='207', height='196', viewBox='0 0 207 196')
+				defs
+					path#qgwca(d='M163.687 2035.923h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.249h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.471h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692zm63.122 0h-6.693v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.693zm63.12 0h-6.694v6.66h-4.27v-6.66h-6.694v-4.25h6.694v-6.663h4.27v6.663h6.693zm63.12 0h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692z')
+				g
+					g(transform='translate(-146 -2025)')
+						use(xlink:href='#qgwca')
+
+			+e.SVG.decor._cross-4.decor-img(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='207', height='196', viewBox='0 0 207 196')
+				defs
+					path#qgwca(d='M163.687 2035.923h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.249h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.471h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692zm63.122 0h-6.693v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.693zm63.12 0h-6.694v6.66h-4.27v-6.66h-6.694v-4.25h6.694v-6.663h4.27v6.663h6.693zm63.12 0h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692z')
+				g
+					g(transform='translate(-146 -2025)')
+						use(xlink:href='#qgwca')
+
+			+e.SVG.decor._cross-5.decor-img(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='207', height='196', viewBox='0 0 207 196')
+				defs
+					path#qgwca(d='M163.687 2035.923h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.249h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.471h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692zm63.122 0h-6.693v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.693zm63.12 0h-6.694v6.66h-4.27v-6.66h-6.694v-4.25h6.694v-6.663h4.27v6.663h6.693zm63.12 0h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692z')
+				g
+					g(transform='translate(-146 -2025)')
+						use(xlink:href='#qgwca')
+
+			+e.SVG.decor._cross-6.decor-img(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='207', height='196', viewBox='0 0 207 196')
+				defs
+					path#qgwca(d='M163.687 2035.923h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.249h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.249h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.471h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm63.122 0h-6.693v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.693zm63.12 0h-6.694v6.662h-4.27v-6.662h-6.694v-4.25h6.694v-6.662h4.27v6.662h6.693zm63.12 0h-6.692v6.662h-4.27v-6.662h-6.695v-4.25h6.695v-6.662h4.27v6.662h6.692zm-189.362 59.47h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692zm63.122 0h-6.693v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.693zm63.12 0h-6.694v6.66h-4.27v-6.66h-6.694v-4.25h6.694v-6.663h4.27v6.663h6.693zm63.12 0h-6.692v6.66h-4.27v-6.66h-6.695v-4.25h6.695v-6.663h4.27v6.663h6.692z')
+				g
+					g(transform='translate(-146 -2025)')
+						use(xlink:href='#qgwca')
+
 			+e.container.container
-				+sectTitle('отзывы студентов курса', '_yellow team__title')
+				+sectTitle('отзывы студентов курса', '_yellow reviews__title')
 
 				+e.slider-wrap
 					+e.slider.slider.js-reviews-slider
 						-i = 0
 						while i < 2
-							+e.block.video-block
-								img.video-block__poster(src='img/content/reviews/reviews-poster.png' alt='image')
-								+b.BUTTON.video-block__play-btn
-									+i('play')
-									+i('play')
+							+e.slider-item
+								+e.block.video-block
+									img.video-block__poster(src='img/content/reviews/reviews-poster.png' alt='image')
+									+b.BUTTON.video-block__play-btn
+										+i('play')
+										+i('play')
 
-								video(playsinline='playsinline', controls, loop='loop', preload='auto')
-									source(src='data/video/video-sample.mp4', type='video/mp4')
+									video(playsinline='playsinline', controls, loop='loop', preload='auto')
+										source(src='data/video/video-sample.mp4', type='video/mp4')
 							-i++
 
 				+e.row.row

@@ -5,7 +5,80 @@ mixin popup(el)
 			+b.popup(data-popup-id='thanks-popup', tabindex='-1', role='dialog')
 				+e.container._xs
 					+e.close.js-popup-close: +i('close')
-					+b.contact-form.thanks-popup
-						+e.H5.title.title Спасибо!
-						+e.P Наш менеджер свяжется с Вами в ближайшее время
+					+b.thanks-popup
+						+e.H5.title.intro-title Спасибо!
+							= ' '
+							span Ваша заявка принята
 						+b.BUTTON.thanks-popup__btn(data-popup-target='thanks-popup' type='button')
+
+		when 'call-popup'
+			+b.popup(data-popup-id='call-popup', tabindex='-1', role='dialog')
+				+e.container._md
+					+e.close.js-popup-close: +i('close')
+					+b.request-block._popup
+						+e.heading
+							+e.H5.title.intro-title
+								span Укажите
+								= ' '
+								| ваш телефон
+							+e.H6.sub-title и мы свяжемся с вами в течении 15 мин
+
+						+e.FORM.form.js-form(action='#!' method='POST')
+							+e.form-block
+								+formField('request-block__form-field', 'Имя')(name='name')
+								+formField('request-block__form-field', 'Телефон')(class='js-tel-input' type='tel' name='tel' required)
+								+btn('_blue request-block__form-btn', 'Отправить')(type='submit')
+
+		when 'programs-popup-1'
+			+b.popup(data-popup-id='programs-popup-1', tabindex='-1', role='dialog')
+				+e.container._lg
+					+e.close._black.js-popup-close: +i('close')
+					.programs__item.programs__item_popup
+						.programs__item-img-wrap.img-wrap
+							img(src='img/content/programs/programs_1.jpg', alt='image', title='')
+						.programs__item-text
+							h4.programs__item-title Арт-эксперт для подростков
+							h6.programs__item-sub-title с блоком арт-английского
+							.programs__item-text-decor
+							-i = 0
+							while i < 3
+								p.programs__item-descr Программа для творческого самовыражения, освобождения от шаблонов и интенсивной прокачки современного разговорного английского языка! 18 занятий = 14 крутых живописных работ в различных современных техниках!
+								-i++
+							.programs__item-more
+								+btn('_blue programs__item-call-btn', 'Заказать звонок', 'call-popup')
+
+		when 'programs-popup-2'
+			+b.popup(data-popup-id='programs-popup-2', tabindex='-1', role='dialog')
+				+e.container._lg
+					+e.close._black.js-popup-close: +i('close')
+					.programs__item.programs__item_popup
+						.programs__item-img-wrap.img-wrap
+							img(src='img/content/programs/programs_2.jpg', alt='image', title='')
+						.programs__item-text
+							h4.programs__item-title Арт-эксперт для подростков
+							h6.programs__item-sub-title с блоком арт-английского
+							.programs__item-text-decor
+							-i = 0
+							while i < 3
+								p.programs__item-descr Программа для творческого самовыражения, освобождения от шаблонов и интенсивной прокачки современного разговорного английского языка! 18 занятий = 14 крутых живописных работ в различных современных техниках!
+								-i++
+							.programs__item-more
+								+btn('_blue programs__item-call-btn', 'Заказать звонок', 'call-popup')
+
+		when 'programs-popup-3'
+			+b.popup(data-popup-id='programs-popup-3', tabindex='-1', role='dialog')
+				+e.container._lg
+					+e.close._black.js-popup-close: +i('close')
+					.programs__item.programs__item_popup
+						.programs__item-img-wrap.img-wrap
+							img(src='img/content/programs/programs_3.jpg', alt='image', title='')
+						.programs__item-text
+							h4.programs__item-title Арт-эксперт для подростков
+							h6.programs__item-sub-title с блоком арт-английского
+							.programs__item-text-decor
+							-i = 0
+							while i < 3
+								p.programs__item-descr Программа для творческого самовыражения, освобождения от шаблонов и интенсивной прокачки современного разговорного английского языка! 18 занятий = 14 крутых живописных работ в различных современных техниках!
+								-i++
+							.programs__item-more
+								+btn('_blue programs__item-call-btn', 'Заказать звонок', 'call-popup')

@@ -1,0 +1,72 @@
+// *** begin start *** //
+.start
+   position: relative
+   padding: 90px 0 350px
+   text-align: center
+   overflow: hidden
+   +md
+      padding: 30px 0 310px
+   +sm
+      padding: 30px 0 210px
+   &::after
+      position: absolute
+      left: 0
+      bottom: -1px
+      width: 100%
+      height: 631px
+      z-index: 1
+      pointer-events: none
+      background: url("../img/decor/gray-tail.png") 50% 100%
+      content: ''
+      
+   &__decor
+      +md
+         display: none
+      &_1
+         top: 16.6%
+         left: 1.7%
+         width: percentage(215 / 1920)
+         padding-top: percentage(244 / 1920)
+      
+   &__container
+      position: relative
+   &__heading
+      margin-bottom: 45px
+      +sm
+         margin-bottom: 15px
+   &__title
+      margin-bottom: 27px
+   &__timer
+      max-width: 660px
+      margin: 0 auto 62px
+      +md
+         max-width: 580px
+      +sm
+         position: relative
+         height: 100px
+         margin: 0 auto 20px
+      .flip-clock
+         +sm
+            position: absolute
+            left: 50%
+            transform: scale(0.55)
+            width: 300px
+            margin-left: -223px
+   &__request-btn
+      min-width: 304px
+   &__decor-img
+      width: percentage(1110 / 1140)
+      +ratio(1110, 652)
+      position: absolute
+      top: 83%
+      left: 50%
+      transform: translateX(-50%)
+      +cover-img
+      pointer-events: none
+      +sm
+         top: calc(100% + 30px)
+      img
+         +coverdiv
+         width: 100%
+
+// end start //

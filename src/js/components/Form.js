@@ -53,7 +53,7 @@ class Form {
       thanskPopInstance.open();
 
       setTimeout(() => {
-        // thanskPopInstance.close();
+        thanskPopInstance.close();
       }, 2000);
 
       $this[0].reset();

@@ -1,18 +1,67 @@
 // *** begin view *** //
 .view
-   padding: 100px 0
+   position: relative
+   padding: 120px 0 80px
    background: $color9 url("../img/bg/gray_dots.png") no-repeat 50% top
+   +md
+      padding: 70px 0
+   +sm
+      padding: 20px 0
+   &::after
+      position: absolute
+      left: 0
+      top: 100%
+      width: 100%
+      height: 230px
+      z-index: 1
+      background: url("../img/decor/gray-tail-bot.png") 50% 100%
+      content: ''
+      
+   &__decor
+      +md
+         display: none
+      &_1
+         z-index: 2
+         top: 143px
+         right: 66px
+         width: percentage(183 / 1920)
+         padding-top: percentage(205 / 1920)
+         +lg
+            right: -9px
+      &_2
+         top: 480px
+         right: 100px
+         width: percentage(92 / 1920)
+         padding-top: percentage(69 / 1920)
+         +lg
+            right: 29px
+      &_cross-1
+         bottom: 110px
+         left: 53px
+         width: 138px
+         height: 131px
+         fill: #e6e6e6
+      &_cross-2
+         top: 85px
+         right: 20px
+         width: 159px
+         height: 151px
+         fill: #e6e6e6
+      
    &__row
       position: relative
    &__block
       &-img-wrap
          +ratio(255, 255)
    &__more
-      height: 65px
+      height: 68px
       display: flex
       justify-content: center
       align-items: flex-end
+      +sm
+         height: 55px
       &-link
+         font-size: 18px
       
    &__divider
       position: absolute
@@ -21,6 +70,8 @@
       height: 143px
       pointer-events: none
       transition: 1.5s ease-in-out
+      +md
+         display: none
       &_1
          top: 196px
       &_2
@@ -29,12 +80,12 @@
          .is-active &
             opacity: 1
       &_3
-         top: 762px
+         top: 768px
          opacity: 0
          .is-active &
             opacity: 1
       &_4
-         top: 1050px
+         top: 1051px
          opacity: 0
          .is-active &
             opacity: 1

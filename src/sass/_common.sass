@@ -4,6 +4,10 @@ body
    -moz-osx-font-smoothing: grayscale
    +f('pn400', 20, 27)
    color: $color5
+   +md
+      font-size: 16px
+      line-height: 24px
+   
    &.is-locked
       position: fixed
       top: 0
@@ -31,12 +35,24 @@ body
    &_sm
       flex-basis: 25%
       width: 25%
+      +sm
+         flex-basis: 50%
+         width: 50%
+      &:nth-child(2) ~ &
+         +sm
+            padding-top: percentage(30 / 1140)
       &:nth-child(4) ~ &
          padding-top: percentage(30 / 1140)
          
    &_md
       flex-basis: 33.33333%
       width: 33.33333%
+      +sm
+         flex-basis: 50%
+         width: 50%
+      &:nth-child(2) ~ &
+         +sm
+            padding-top: 10px
       &:nth-child(3) ~ &
          padding-top: percentage(30 / 1140)
          
