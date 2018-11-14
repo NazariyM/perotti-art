@@ -21,7 +21,7 @@ block content
 					+e.FORM.form.js-form(action='#!' method='POST')
 						+e.P.form-descr Запишись на обучение и стань экспертом в современном искусстве вместе с опытными художниками.
 						+e.form-block
-							+formField('request-block__form-field', 'Имя')(name='name')
+							+formField('request-block__form-field', 'Имя')(name='name' required)
 							+formField('request-block__form-field', 'Телефон')(class='js-tel-input' type='tel' name='tel' required)
 							+btn('_blue request-block__form-btn', 'Отправить')(type='submit')
 
@@ -140,7 +140,7 @@ block content
 					+e.divider._3
 		//end kinds
 
-		//+b.section-divider._1
+		+b.section-divider._1
 		
 		//begin start
 		+b.SECTION.start
@@ -260,7 +260,7 @@ block content
 								+e.IMG(src=`img/content/team/team_sm-6.jpg` alt='image')
 		//end team
 
-		//+b.section-divider._2
+		+b.section-divider._2
 
 		//begin reviews
 		+b.SECTION.reviews#reviews

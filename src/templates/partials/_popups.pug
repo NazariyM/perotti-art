@@ -25,7 +25,7 @@ mixin popup(el)
 
 						+e.FORM.form.js-form(action='#!' method='POST')
 							+e.form-block
-								+formField('request-block__form-field', 'Имя')(name='name')
+								+formField('request-block__form-field', 'Имя')(name='name' required)
 								+formField('request-block__form-field', 'Телефон')(class='js-tel-input' type='tel' name='tel' required)
 								+btn('_blue request-block__form-btn', 'Отправить')(type='submit')
 
